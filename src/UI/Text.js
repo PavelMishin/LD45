@@ -1,7 +1,7 @@
 const FONT = {
-    fontFamily: 'Comfortaa',
-    fontSize: '20px',
-    color: '#010312'
+    fontFamily: 'Orbitron',
+    fontSize: '32px',
+    color: '#9a9ea0'
 }
 
 export default class Text extends Phaser.GameObjects.Text {

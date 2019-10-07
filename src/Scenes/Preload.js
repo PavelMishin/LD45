@@ -23,16 +23,31 @@ export default class Preload extends Phaser.Scene {
         //
         // this.load.multiatlas('bat', Data.spriteAtlas, 'sprites')
         // this.load.json('batShape', Data.atlasShape) // Only for Matter
-        //
-        // this.load.tilemapTiledJSON('level', 'tilemaps/level.json')
-        // this.load.image('layerSpriteSheet', Tilesets.tiles)
-        //
-        // this.load.bitmapFont('bmfont', Fonts.image.bmfont, Fonts.data.bmfont)
-        //
-        // this.load.image('img', Images.img)
+
+        this.load.tilemapTiledJSON('level', 'tilemaps/level.json')
+
+        this.load.image('floor', [Images.floorTile, Images.map])
+        this.load.image('hero', [Images.character, Images.map])
+        this.load.image('heroArmed', [Images.characterMiniGun, Images.map])
+        this.load.image('enemy', [Images.enemy1, Images.map])
+        this.load.image('eyes', Images.enemy1Activated)
+        this.load.image('gun', [Images.gun, Images.map])
+        this.load.image('bullet', [Images.bullet, Images.map])
+        this.load.image('miniGun', [Images.miniGun, Images.map])
+        this.load.image('wall_h', [Images.wallH, Images.map])
+        this.load.image('wall_v', [Images.wallV, Images.map])
+
+
+        this.load.image('battery', Images.battery)
+        this.load.image('arrow', Images.arrow)
+        this.load.image('lose_bg', Images.button1)
+        this.load.image('win_bg', Images.button2)
+        this.load.image('restart_btn', Images.restart)
+
+
+        this.load.image('fl', [Images.untitled, Images.untitledN])
 
         // this.load.audio('sound', Audio.sound)
-
     }
 
     create() {

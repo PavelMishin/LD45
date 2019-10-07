@@ -17,7 +17,6 @@ export default class HUD extends Phaser.Scene {
         this.gameScene = this.scene.get('Game')
 
         this.gameScene.data.events.on('changedata-status', this._handleGameStatusChange, this)
-
     }
 
     _handleGameStatusChange(parent, value, previousValue) {

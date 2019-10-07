@@ -129,4 +129,24 @@ export default class Utils {
 
         object.setTint(0x666666)
     }
+
+    static getNearest(object, objectsArray) {
+        let nearest
+        let minDistance = 0
+        objectsArray.forEach((item) => {
+            const distance = Phaser.Math.Distance.Between(object.x, object.y, item.x, item.y)
+            if (minDistance === 0 || distance < minDistance) {
+                minDistance = distance
+                nearest = item
+            }
+        })
+        return nearest
+    }
+
+    static checkCirclesContain(circles, x, y) {
+        const result = circles.find((zone) => {
+            return Phaser.Geom.Circle.Contains(zone, x, y)
+        })
+        return !!result
+    }
 }

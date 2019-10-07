@@ -7,9 +7,9 @@ export default class Boot extends Phaser.Scene {
 
     preload() {
         this.load.baseURL = 'assets/'
-        this.load.image('preloadBg', Images.preloadBg)
-        this.load.image('loadBarBg', Images.loadBarBg)
-        this.load.image('loadBar', Images.loadBar)
+        // this.load.image('preloadBg', Images.preloadBg)
+        // this.load.image('loadBarBg', Images.loadBarBg)
+        // this.load.image('loadBar', Images.loadBar)
     }
 
     create() {

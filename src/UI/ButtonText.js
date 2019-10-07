@@ -4,7 +4,7 @@ import Utils from "../Utils"
 const STYLE = {
     regular: {
         alpha: 1,
-        scale:  1,
+        scale:  0.25,
     },
     hover: {
         alpha: 1,
@@ -14,10 +14,10 @@ const STYLE = {
 }
 
 export default class ButtonText extends Phaser.GameObjects.Container {
-    constructor(scene, x, y, frame, text = false, enabled = true) {
+    constructor(scene, x, y, texture, text = false, enabled = true) {
         super(scene, x, y)
 
-        this.background = new Phaser.GameObjects.Image(scene, 0, 0, 'images', frame)
+        this.background = new Phaser.GameObjects.Image(scene, 0, 0, texture)
         this.background.setAlpha(STYLE.regular.alpha)
         this.background.setScale(STYLE.regular.scale)
         this.add(this.background)
@@ -36,6 +36,7 @@ export default class ButtonText extends Phaser.GameObjects.Container {
         } else {
             Utils.applyDisableStyle(this.background)
         }
+        scene.add.existing(this)
     }
 
     hover() {
@@ -48,8 +49,6 @@ export default class ButtonText extends Phaser.GameObjects.Container {
             duration: STYLE.hover.time,
         }
         this.scene.tweens.add(hoverTweenConfig)
-
-        this.scene.sound.play('hover')
     }
 
 
